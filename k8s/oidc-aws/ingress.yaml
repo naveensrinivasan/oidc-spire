@@ -6,15 +6,17 @@ metadata:
 spec:
   tls:
     - hosts:
-        # TODO: Replace MY_DISCOVERY_DOMAIN with the FQDN of the Discovery Provider that you will configure in DNS
-        - MY_DISCOVERY_DOMAIN
+        - oidc-discovery.naveensrinivasan.com
       secretName: oidc-secret
   rules:
-    # TODO: Replace MY_DISCOVERY_DOMAIN with the FQDN of the Discovery Provider that you will configure in DNS
-    - host: MY_DISCOVERY_DOMAIN
+    - host: oidc-discovery.naveensrinivasan.com
       http:
         paths:
           - path: /.well-known/openid-configuration
+            backend:
+              serviceName: spire-oidc
+              servicePort: 443
+          - path: /keys
             backend:
               serviceName: spire-oidc
               servicePort: 443

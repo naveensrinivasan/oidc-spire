@@ -26,8 +26,7 @@ data:
       ca_key_type = "rsa-2048"
 
       # Creates the iss claim in JWT-SVIDs.
-      # TODO: Replace MY_DISCOVERY_DOMAIN with the FQDN of the Discovery Provider that you will configure in DNS
-      jwt_issuer = "https://MY_DISCOVERY_DOMAIN"
+      jwt_issuer = "https://oidc-discovery.naveensrinivasan.com"
 
       default_svid_ttl = "1h"
       ca_subject = {
@@ -48,8 +47,7 @@ data:
       NodeAttestor "k8s_sat" {
         plugin_data {
           clusters = {
-            # TODO: Change this to your cluster name
-            "demo-cluster" = {
+            "do-sfo3-spire-naveen" = {
               use_token_review_api_validation = true
               service_account_whitelist = ["spire:spire-agent"]
             }
