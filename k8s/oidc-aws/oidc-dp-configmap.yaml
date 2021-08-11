@@ -13,6 +13,6 @@ data:
         tos_accepted = true
         email = "foobar@turris.xyz"
     }
-    registration_api {
-        socket_path = "/run/spire/sockets/registration.sock"
+    server_api {
+    address = "unix:///tmp/spire-server/private/api.sock"
     }
