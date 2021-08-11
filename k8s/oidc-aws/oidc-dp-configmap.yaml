@@ -14,5 +14,5 @@ data:
         email = "foobar@turris.xyz"
     }
     server_api {
-    address = "unix:///tmp/spire-server/private/api.sock"
+      address = "unix:///run/spire/sockets/spire-server/private/api.sock"
     }
